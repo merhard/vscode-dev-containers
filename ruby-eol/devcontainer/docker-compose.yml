@@ -1,0 +1,26 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ..:/workspace:cached
+      - zsh_history:/commandhistory
+    depends_on:
+      - db
+      - redis
+    command: sleep infinity
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+  db:
+    image: postgres:9.6
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  redis:
+    image: redis
+volumes:
+  db_data:
+  zsh_history:

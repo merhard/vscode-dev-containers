@@ -1,0 +1,17 @@
+{
+  "name": "Place App Name Here",
+
+  "dockerComposeFile": "docker-compose.yml",
+
+  "service": "web",
+
+  "workspaceFolder": "/workspace",
+
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/zsh"
+  },
+
+  "extensions": ["rebornix.Ruby"],
+
+  "postCreateCommand": "bundle install"
+}
