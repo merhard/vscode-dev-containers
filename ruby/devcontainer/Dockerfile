@@ -1,4 +1,4 @@
-FROM ruby:2.7
+FROM ruby
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive

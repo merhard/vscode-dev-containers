@@ -14,7 +14,7 @@ services:
     environment:
       - REDIS_URL=redis://redis:6379/0
   db:
-    image: postgres:9.6
+    image: postgres
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:
