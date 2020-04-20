@@ -9,5 +9,6 @@ When there is no default Ruby image from https://hub.docker.com/_/ruby available
 - https://github.com/docker-library/ruby/blob/c5693b25aa/2.1
 - https://github.com/docker-library/ruby/blob/b5ef401d34/2.2
 - https://github.com/docker-library/ruby/blob/31f66490fd/2.3
+- https://github.com/docker-library/ruby/blob/a564feaaee/2.4
 
 The Checksum values can be looked up here: https://www.ruby-lang.org/en/downloads/releases/
