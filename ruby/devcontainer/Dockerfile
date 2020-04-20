@@ -9,8 +9,6 @@ RUN apt-get update \
     #
     # Install vim, git, process tools, lsb-release
     && apt-get install -y \
-        zsh \
-        silversearcher-ag \
         vim \
         git \
         openssh-client \
@@ -56,6 +54,11 @@ RUN apt-get update \
     && mv chromedriver /usr/local/bin/chromedriver \
     && chmod +x /usr/local/bin/chromedriver \
     && chromedriver --version \
+    #
+    # Install personal dev environment requirements
+    && apt-get install -y \
+        zsh \
+        silversearcher-ag \
     #
     # Persist ZSH history between runs
     # - use ~/.zshrc.local so developer can still import their own dotfiles without issue (using VSCode's "dotfiles.repository" setting)
