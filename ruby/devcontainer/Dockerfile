@@ -23,7 +23,8 @@ RUN apt-get update \
     # Install nodejs
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -y nodejs \
-    # 
+    && npm install npm -g \
+    #
     # Install yarn
     && apt-get install -y curl apt-transport-https lsb-release \
     && curl -sS https://dl.yarnpkg.com/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/pubkey.gpg | apt-key add - 2>/dev/null \
