@@ -1,0 +1,21 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - ..:/workspace:cached
+      - zsh_history:/commandhistory
+    command: sleep infinity
+  db:
+    image: postgres
+    network_mode: service:web
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+volumes:
+  db_data:
+  zsh_history:
