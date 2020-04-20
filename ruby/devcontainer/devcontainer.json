@@ -11,7 +11,7 @@
     "terminal.integrated.shell.linux": "/bin/zsh"
   },
 
-  "extensions": ["rebornix.Ruby"],
-
-  "postCreateCommand": "bundle install"
+  "extensions": [
+    "rebornix.Ruby"
+  ]
 }
