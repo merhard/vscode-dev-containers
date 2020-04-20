@@ -66,9 +66,6 @@ RUN apt-get update \
     # - be sure to have `[[ -f "$HOME/.zshrc.local" ]] && source $HOME/.zshrc.local` at the bottom of your personal ~/.zshrc dotfile
     && echo "export HISTFILE=/commandhistory/.zsh_history" >> /root/.zshrc.local \
     #
-    # Install application dependencies
-    && bundle install \
-    #
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \

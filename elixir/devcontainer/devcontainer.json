@@ -13,5 +13,7 @@
 
   "extensions": [
     "jakebecker.elixir-ls"
-  ]
+  ],
+
+  "postCreateCommand": "mix deps.get"
 }

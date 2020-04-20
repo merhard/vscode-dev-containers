@@ -13,5 +13,7 @@
 
   "extensions": [
     "rebornix.Ruby"
-  ]
+  ],
+
+  "postCreateCommand": "bundle install"
 }
