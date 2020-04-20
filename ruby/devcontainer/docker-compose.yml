@@ -7,20 +7,17 @@ services:
     volumes:
       - ..:/workspace:cached
       - zsh_history:/commandhistory
-    depends_on:
-      - db
-      - redis
     command: sleep infinity
-    environment:
-      - REDIS_URL=redis://redis:6379/0
   db:
     image: postgres
+    network_mode: service:web
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
   redis:
     image: redis
+    network_mode: service:web
 volumes:
   db_data:
   zsh_history:
