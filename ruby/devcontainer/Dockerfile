@@ -56,6 +56,11 @@ RUN apt-get update \
     && chmod +x /usr/local/bin/chromedriver \
     && chromedriver --version \
     #
+    # Update rubygems & bundler
+    && gem update --system \
+    && gem update bundler \
+    && gem cleanup \
+    #
     # Install personal dev environment requirements
     && apt-get install -y \
         zsh \
