@@ -6,8 +6,11 @@ services:
       - "4000:4000"
     volumes:
       - ..:/workspace:cached
-      - zsh_history:/commandhistory
+      - commandhistory:/commandhistory
     command: sleep infinity
+    environment:
+      - HISTFILE=/commandhistory/.zsh_history
+      - IEX_HISTFILE=/commandhistory/.iex_history
   db:
     image: postgres
     network_mode: service:web
@@ -18,4 +21,4 @@ services:
       - POSTGRES_PASSWORD=postgres
 volumes:
   db_data:
-  zsh_history:
+  commandhistory:

@@ -38,11 +38,6 @@ RUN apt-get update \
         silversearcher-ag \
         ruby \
     #
-    # Persist ZSH history between runs
-    # - use ~/.zshrc.local so developer can still import their own dotfiles without issue (using VSCode's "dotfiles.repository" setting)
-    # - be sure to have `[[ -f "$HOME/.zshrc.local" ]] && source $HOME/.zshrc.local` at the bottom of your personal ~/.zshrc dotfile
-    && echo "export HISTFILE=/commandhistory/.zsh_history" >> /root/.zshrc.local \
-    #
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \

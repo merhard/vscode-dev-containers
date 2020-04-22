@@ -6,8 +6,11 @@ services:
       - "3000:3000"
     volumes:
       - ..:/workspace:cached
-      - zsh_history:/commandhistory
+      - commandhistory:/commandhistory
     command: sleep infinity
+    environment:
+      - HISTFILE=/commandhistory/.zsh_history
+      - IRB_HISTFILE=/commandhistory/.irb_history
   db:
     image: postgres
     network_mode: service:web
@@ -23,4 +26,4 @@ services:
 volumes:
   db_data:
   redis_data:
-  zsh_history:
+  commandhistory:
