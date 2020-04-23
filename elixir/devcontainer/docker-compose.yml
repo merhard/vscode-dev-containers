@@ -14,6 +14,7 @@ services:
   db:
     image: postgres
     network_mode: service:web
+    restart: always
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:
