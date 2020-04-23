@@ -38,7 +38,6 @@ RUN apt-get update \
     # Install personal dev environment requirements
     && apt-get install -y \
         zsh \
-        silversearcher-ag \
         ruby \
     #
     # Clean up
