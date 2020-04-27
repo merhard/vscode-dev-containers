@@ -1,9 +1,64 @@
 {
-  "type": "mix_task",
-  "name": "mix test",
-  "request": "launch",
-  "task": "test",
-  "taskArgs": ["--trace"],
-  "projectDir": "${workspaceRoot}",
-  "requireFiles": ["test/**/test_helper.exs", "test/**/*_test.exs"]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "mix phx.server",
+      "type": "mix_task",
+      "request": "launch",
+      "task": "phx.server",
+      "projectDir": "${workspaceRoot}",
+      "serverReadyAction": {
+        "pattern": "Access .*Endpoint at (.+)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      }
+    },
+    {
+      "name": "mix test",
+      "type": "mix_task",
+      "request": "launch",
+      "task": "test",
+      "taskArgs": [
+        "--trace"
+      ],
+      "startApps": true,
+      "projectDir": "${workspaceRoot}",
+      "requireFiles": [
+        "test/**/test_helper.exs",
+        "test/**/*_test.exs"
+      ]
+    },
+    {
+      "name": "mix test [file]",
+      "type": "mix_task",
+      "request": "launch",
+      "task": "test",
+      "taskArgs": [
+        "--trace",
+        "${relativeFile}"
+      ],
+      "startApps": true,
+      "projectDir": "${workspaceRoot}",
+      "requireFiles": [
+        "test/**/test_helper.exs",
+        "${relativeFile}"
+      ]
+    },
+    {
+      "name": "mix test [line]",
+      "type": "mix_task",
+      "request": "launch",
+      "task": "test",
+      "taskArgs": [
+        "--trace",
+        "${relativeFile}:${lineNumber}"
+      ],
+      "startApps": true,
+      "projectDir": "${workspaceRoot}",
+      "requireFiles": [
+        "test/**/test_helper.exs",
+        "${relativeFile}"
+      ]
+    }
+  ]
 }
