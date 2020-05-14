@@ -1,0 +1,72 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "rails server",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "server"
+      ],
+      "serverReadyAction": {
+        "pattern": "Rails .*application starting.* (https?://\\S+)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      }
+    },
+    {
+      "name": "rails test",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "test"
+      ]
+    },
+    {
+      "name": "rails test [file]",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "test",
+        "${relativeFile}"
+      ]
+    },
+    {
+      "name": "rails test [line]",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "test",
+        "${relativeFile}:${lineNumber}"
+      ]
+    },
+    {
+      "name": "rspec",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/bin/rspec"
+    },
+    {
+      "name": "rspec [file]",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/bin/rspec",
+      "args": [
+        "${relativeFile}"
+      ]
+    },
+    {
+      "name": "rspec [line]",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/bin/rspec",
+      "args": [
+        "${relativeFile}:${lineNumber}"
+      ]
+    }
+  ]
+}

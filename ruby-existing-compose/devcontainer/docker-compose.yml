@@ -1,0 +1,31 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ..:/workspace:cached
+      - commandhistory:/commandhistory
+    command: sleep infinity
+    environment:
+      - HISTFILE=/commandhistory/.zsh_history
+      - IRB_HISTFILE=/commandhistory/.irb_history
+  db:
+    image: postgres
+    network_mode: service:web
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  redis:
+    image: redis
+    network_mode: service:web
+    restart: always
+    volumes:
+      - redis_data:/data
+volumes:
+  db_data:
+  redis_data:
+  commandhistory:
